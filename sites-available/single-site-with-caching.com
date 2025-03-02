@@ -43,9 +43,11 @@ server {
 		try_files $uri =404;
 		include global/fastcgi-params.conf;
 
-		# Use the php pool defined in the upstream variable.
-		# See global/php-pool.conf for definition.
-		fastcgi_pass   $upstream;
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		fastcgi_pass wordpress:9000;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+		fastcgi_param PATH_INFO $fastcgi_path_info;
 
 		# Skip cache based on rules in global/server/fastcgi-cache.conf.
 		fastcgi_cache_bypass $skip_cache;
