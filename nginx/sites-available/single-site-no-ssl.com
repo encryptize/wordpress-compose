@@ -12,10 +12,6 @@ server {
 	# File to be used as index
 	index index.php;
 
-	# Overrides logs defined in nginx.conf, allows per site logs.
-	access_log /sites/single-site-no-ssl.com/logs/access.log;
-	error_log /sites/single-site-no-ssl.com/logs/error.log;
-
 	# Default server block rules
 	include global/server/defaults.conf;
 
