@@ -7,7 +7,7 @@ server {
 	server_name single-site-no-ssl.com;
 
 	# Path to document root
-	root /sites/single-site-no-ssl.com/public;
+	root /var/www/html;
 
 	# File to be used as index
 	index index.php;

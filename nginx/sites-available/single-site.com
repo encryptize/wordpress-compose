@@ -8,7 +8,7 @@ server {
 	server_name single-site.com;
 
 	# Path to document root
-	root /sites/single-site.com/public;
+	root /var/www/html;
 
 	# Paths to certificate files.
 	ssl_certificate /etc/letsencrypt/live/single-site.com/fullchain.pem;
@@ -16,10 +16,6 @@ server {
 
 	# File to be used as index
 	index index.php;
-
-	# Overrides logs defined in nginx.conf, allows per site logs.
-	access_log /sites/single-site.com/logs/access.log;
-	error_log /sites/single-site.com/logs/error.log;
 
 	# Default server block rules
 	include global/server/defaults.conf;
